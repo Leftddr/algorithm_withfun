@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(doucment).ready(function(){
+            $("#filp").click(function(){
+                $("#panel").slideToggle("slow");
+            });
+        });
+        var param = {
+            test : 'hello world'
+        }
+        $.ajax({
+            type : 'POST',
+            url : "/test/home",
+            dataType : 'json',
+            contentType : 'application/json',
+            data : param,
+            success : successCall,
+            error : errorCall
+        });
+    </script>
+    </head>
+    <body>
+        <div id = "flip">Click to slide the panel down or up</div>
+        <div id = "panel">Hello World!</div>
+    </body>
+</html>
